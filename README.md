@@ -17,18 +17,21 @@ Note: This package requires you to use an API token from https://dataverse.harva
 Usage
 -----
 
-At current state, there are just two functions in this package. The first function initializes with the Dataverse and pulls in the translation table. The second merges that translation table to your dataframe.
+At current state, there are just two functions in this package. The first fuenction initializes with the Dataverse and pulls in the translation table. The second merges that translation table to your dataframe.
 
-1. Initialize with Dataverse
+1. Initialize with Dataverse. When prompted, input your API token from Dataverse. Store the returned values in a object of your choosing. In this example, I'm storing the data in an object called `mapping`.
 
 ```r
 mapping <- dvinit()
 ```
 
-2. Join Data with zip2dma(). 
+2. Let's create a pretend dataset with some random zip codes:
 
 ```r
 sample_zips <- c("32180","59430","38281","12937","3043","05061","32505") %>% enframe()
+```
+
+3. Use `zip2dma()` to left join the object created in step 1 (`mapping`) to your dataset (`sample_zips`). Note that you'll have to define the column of your dataset that holds the zip codes. In our case, column `value` in `sample_zips` is the column with zipcodes.
 
 sample_zips %>% zip2dma(dvdata=mapping, zip_col = "value")
 
@@ -43,4 +46,11 @@ sample_zips %>% zip2dma(dvdata=mapping, zip_col = "value")
 
 ```
 
-Note that the source data is currently untouched and therefore, zipcodes without leading 0 will not have a match (see obs 3). This is something I intend to fix in a future state, however at this time I suggest using the `zipcode` package available on CRAN.
+Future Sprint Log
+-----
+
+1. Currently, the source dataframe is matched exactly and therefore, zipcodes without leading zeros will not have a match (see obs 3 in the example above). This is something I intend to fix in a future state, however at this time I suggest using the `zipcode` package available on CRAN.
+
+2. Additional joins. In my immediate use-case (the reason why I wrote this package), the only join I would ever need was a left join. To make this more universal, I think implementing additional options for other joins should be preferable.
+
+3. Optimize the way the package stores API tokens.
