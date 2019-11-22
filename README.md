@@ -43,4 +43,4 @@ sample_zips %>% zip2dma(dvdata=mapping, zip_col = "value")
 
 ```
 
-Note that the source data is currently untouched and therefore, zipcodes without leading 0 will not have a match. This is something I intend to fix in a future state, however at this time I suggest using the `zipcode` package available on CRAN.
+Note that the source data is currently untouched and therefore, zipcodes without leading 0 will not have a match (see obs 3). This is something I intend to fix in a future state, however at this time I suggest using the `zipcode` package available on CRAN.
