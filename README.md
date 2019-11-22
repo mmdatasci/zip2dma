@@ -11,7 +11,7 @@ library(devtools)
 install_github("mmdatasci/zip2dma")
 ```
 
-Also, this package requires you to use an API token from https://dataverse.harvard.edu/ - you can obtain one by signing up for Dataverse and requesting one.
+Note: This package requires you to use an API token from https://dataverse.harvard.edu/ - you can obtain one by signing up for Dataverse and requesting one.
 
 
 Usage
@@ -25,7 +25,7 @@ At current state, there are just two functions in this package. The first functi
 mapping <- dvinit()
 ```
 
-2. Join Data
+2. Join Data with zip2dma(). 
 
 ```r
 sample_zips <- c("32180","59430","38281","12937","3043","05061","32505") %>% enframe()
@@ -42,3 +42,5 @@ sample_zips %>% zip2dma(dvdata=mapping, zip_col = "value")
 > 7 59430    2 30027       Fergus   MT      755                       GREAT FALLS
 
 ```
+
+Note that the source data is currently untouched and therefore, zipcodes without leading 0 will not have a match. This is something I intend to fix in a future state, however at this time I suggest using the `zipcode` package available on CRAN.
