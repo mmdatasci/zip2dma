@@ -1,14 +1,4 @@
 # zip2dma
-R package to easily translate Zipcodes into Designated Market Areas (DMAs)
-
-# Installation
-
-`
-`
-
-
-zip2dma
-=============
 
 This package is the rudamentary **first version** of a package allowing users to quickly join DMA information to any data containing zip codes:
 
