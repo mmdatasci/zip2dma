@@ -33,7 +33,8 @@ sample_zips <- c("32180","59430","38281","12937","3043","05061","32505") %>% enf
 
 3. Use `zip2dma()` to left join the object created in step 1 (`mapping`) to your dataset (`sample_zips`). Note that you'll have to define the column of your dataset that holds the zip codes. In our case, column `value` in `sample_zips` is the column with zipcodes.
 
-```sample_zips %>% zip2dma(dvdata=mapping, zip_col = "value")
+```
+sample_zips %>% zip2dma(dvdata=mapping, zip_col = "value")
 
 >   value name  FIPS       COUNTY   ST DMA.CODE                          DMA.NAME
 > 1 05061    6  <NA>         <NA> <NA>     <NA>                              <NA>
