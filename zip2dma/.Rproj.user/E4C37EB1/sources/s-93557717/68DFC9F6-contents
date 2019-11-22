@@ -1,0 +1,16 @@
+Package: zip2dma
+Type: Package
+Title: Zip2dma Allows for Easy Translation of Zipcodes to Designated Market Areas (DMAs)
+Version: 0.1.0
+Author: Matthias Mueller
+Maintainer: Matthias Mueller <matthiasmueller924@gmail.com>
+Description: Zip2dma was created to allow for quicker segmentation when working with 
+    marketing data that includes zipcode, but no DMA information. Oftentimes, 
+    marketing impressions are bought against Designated Market Areas (DMAs), which
+    is a specific grouping of areas defined by Nielsen(R). 
+    This package loads a translation table from the Harvard Dataverse 
+    and then allows users to join DMA information to their dataset with ease.
+Imports: dataverse, dplyr
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
