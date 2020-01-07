@@ -50,7 +50,7 @@ sample_zips %>% zip2dma(dvdata=mapping, zip_col = "value")
 Future Sprint Log
 -----
 
-1. Currently, the source dataframe is matched exactly and therefore, zipcodes without leading zeros will not have a match (see obs 3 in the example above). This is something I intend to fix in a future state, however at this time I suggest using the `zipcode` package available on CRAN.
+1. Currently, the source dataframe is matched exactly and therefore, zipcodes with leading zeros will not have a match (see obs 3 in the example above). This is something I intend to fix in a future state, however at this time I suggest using the `zipcode` package available on CRAN to circumvent this issue.
 
 2. Additional joins. In my immediate use-case (the reason why I wrote this package), the only join I would ever need was a left join. To make this more universal, I think implementing additional options for other joins should be preferable.
 
